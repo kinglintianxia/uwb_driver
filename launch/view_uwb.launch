@@ -1,0 +1,12 @@
+<!--xml version = "1.0"-->
+<launch>
+  <node name = "uwb_dirver" pkg = "uwb_driver" type = "uwb_driver_node" output = "screen">
+  	<param name = "port_name" value = "/dev/uwb_tag" />
+  	<param name = "baud_rate" value = "115200" />
+  	<param name = "base_frame" value = "base_link" />
+  	<param name = "sensor_rate_" value = "10" />
+  </node>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find uwb_driver)/uwb.rviz" />
+
+</launch>
